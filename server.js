@@ -2,8 +2,8 @@ let app = require("express")();
 let http = require("http").Server(app);
 let io = require("socket.io")(http);
 
-app.get("/:username", function(req, res) {
-  res.send("Hello po" + req.params.usrename);
+app.get("/", function(req, res) {
+  res.send("CLI Chat Server!");
 });
 
 let connectedUsers = {};
