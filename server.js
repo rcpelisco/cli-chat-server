@@ -2,6 +2,8 @@ let app = require("express")();
 let http = require("http").Server(app);
 let io = require("socket.io")(http);
 
+let port = process.env.PORT || 8080
+
 app.get("/", function(req, res) {
   res.send("CLI Chat Server!");
 });
@@ -48,6 +50,6 @@ io.on("connection", function(socket) {
   });
 });
 
-http.listen(3000, function() {
-  console.log("listening on *:3000");
+http.listen(port, function() {
+  console.log("App running");
 });

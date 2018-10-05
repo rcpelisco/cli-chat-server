@@ -1,7 +1,7 @@
 const Vorpal = require("vorpal");
 const chalk = Vorpal().chalk;
 const io = require("socket.io-client");
-const socket = io.connect("http://localhost:3000");
+const socket = io.connect("http://localhost:5000");
 const menu = Vorpal().delimiter(`${chalk.green("anonymous@chatting-app")}\n$`);
 
 menu.command("login <username>", "Logs the user in").action(function(args, callback) {
